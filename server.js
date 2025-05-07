@@ -3,7 +3,7 @@ const fs = require("fs");
 const WebSocket = require("ws");
 const express = require("express");
 const app = express();
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, "public")));
 
 const server = http.createServer((req, res) => {
     if (req.url === "/" || req.url === "/index.html") {
