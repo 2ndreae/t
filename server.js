@@ -2,8 +2,12 @@ const http = require("http");
 const fs = require("fs");
 const WebSocket = require("ws");
 const express = require("express");
+// Express 가져오기
+const path = require('path'); // path 모듈 추가
+
 const app = express();
-app.use(express.static(path.join(__dirname, "public")));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 const server = http.createServer((req, res) => {
     if (req.url === "/" || req.url === "/index.html") {
